@@ -26,6 +26,7 @@ mod mainnet_handler;
 pub mod post_execution;
 pub mod pre_execution;
 mod precompile_provider;
+mod aot_precompiles;
 /// System call implementations for special EVM operations.
 pub mod system_call;
 /// Transaction and environment validation utilities.
@@ -41,4 +42,5 @@ pub use item_or_result::{FrameInitOrResult, ItemOrResult};
 pub use mainnet_builder::{MainBuilder, MainContext, MainnetContext, MainnetEvm};
 pub use mainnet_handler::MainnetHandler;
 pub use precompile_provider::{EthPrecompiles, PrecompileProvider};
+pub use aot_precompiles::AotPrecompiles;
 pub use system_call::{SystemCallCommitEvm, SystemCallEvm, SystemCallTx, SYSTEM_ADDRESS};
