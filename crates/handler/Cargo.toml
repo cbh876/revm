@@ -29,6 +29,8 @@ state.workspace = true
 bytecode.workspace = true
 libloading = { version = "0.8", optional = true }
 anyhow = { version = "1.0", optional = true }
+revm-ffi-bridge = { path = "../ffi-bridge", optional = true }
+hex = "0.4"
 
 auto_impl.workspace = true
 derive-where.workspace = true
@@ -59,6 +61,7 @@ std = [
 	"state/std",
     "dep:libloading",
     "dep:anyhow",
+    "dep:revm-ffi-bridge",
 ]
 serde = [
 	"dep:serde",

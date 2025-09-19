@@ -15,6 +15,7 @@ members = [
     "crates/context",
     "crates/context/interface",
     "crates/handler",
+    "crates/ffi-bridge",
 
     # variants
     "crates/op-revm",

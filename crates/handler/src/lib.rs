@@ -27,10 +27,12 @@ pub mod post_execution;
 pub mod pre_execution;
 mod precompile_provider;
 mod aot_precompiles;
+pub mod inline_aot;
 /// System call implementations for special EVM operations.
 pub mod system_call;
 /// Transaction and environment validation utilities.
 pub mod validation;
+
 
 // Public exports
 pub use api::{ExecuteCommitEvm, ExecuteEvm};

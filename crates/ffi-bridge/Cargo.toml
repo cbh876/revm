@@ -1,0 +1,15 @@
+[package]
+name = "revm-ffi-bridge"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Stable C ABI bridge types for AOT plugins"
+
+[lib]
+name = "revm_ffi_bridge"
+path = "src/lib.rs"
+
+[features]
+default = ["std"]
+std = []
+
