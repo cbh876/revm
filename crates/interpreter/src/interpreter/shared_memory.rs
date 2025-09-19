@@ -294,7 +294,7 @@ impl SharedMemory {
         Ref::map(buffer, |b| {
             match b.get(range.start + self.my_checkpoint..range.end + self.my_checkpoint) {
                 Some(slice) => slice,
-                None => debug_unreachable!("slice OOB: range; len: {}", self.len()),
+                None => debug_unreachable!("slice OOB: range; len: {} my_checkpoint: {}", self.len(), self.my_checkpoint),
             }
         })
     }

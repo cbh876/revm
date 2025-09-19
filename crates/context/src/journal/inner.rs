@@ -453,7 +453,9 @@ impl<ENTRY: JournalEntryTr> JournalInner<ENTRY> {
     /// Commits the checkpoint.
     #[inline]
     pub fn checkpoint_commit(&mut self) {
-        self.depth -= 1;
+        if self.depth > 0 {
+            self.depth -= 1;
+        }
     }
 
     /// Reverts all changes to state until given checkpoint.
@@ -462,7 +464,9 @@ impl<ENTRY: JournalEntryTr> JournalInner<ENTRY> {
         let is_spurious_dragon_enabled = self.spec.is_enabled_in(SPURIOUS_DRAGON);
         let state = &mut self.state;
         let transient_storage = &mut self.transient_storage;
-        self.depth -= 1;
+        if self.depth > 0 {
+            self.depth -= 1;
+        }
         self.logs.truncate(checkpoint.log_i);
 
         // iterate over last N journals sets and revert our global state

@@ -2679,6 +2679,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6a82ae493e598baaea5209805c49bbf2ea7de956d50d7da0da1164f9c6d28543"
 
 [[package]]
+name = "libloading"
+version = "0.8.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "07033963ba89ebaf1584d767badaa2e8fcec21aedea6b8c0346d487d49c28667"
+dependencies = [
+ "cfg-if",
+ "windows-targets 0.53.3",
+]
+
+[[package]]
 name = "libm"
 version = "0.2.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3654,6 +3664,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "revm-ffi-bridge"
+version = "0.1.0"
+
+[[package]]
 name = "revm-handler"
 version = "10.0.0"
 dependencies = [
@@ -3661,13 +3675,17 @@ dependencies = [
  "alloy-provider",
  "alloy-signer",
  "alloy-signer-local",
+ "anyhow",
  "auto_impl",
  "derive-where",
+ "hex",
+ "libloading",
  "revm-bytecode",
  "revm-context",
  "revm-context-interface",
  "revm-database",
  "revm-database-interface",
+ "revm-ffi-bridge",
  "revm-interpreter",
  "revm-precompile",
  "revm-primitives",
